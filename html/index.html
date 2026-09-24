@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>rr-3dwaypoint</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="hud" class="is-hidden"></div>
+    <div id="toasts"></div>
+
+    <div id="settings" aria-hidden="true">
+        <div class="settings-backdrop" data-close></div>
+        <section class="panel glass" role="dialog" aria-modal="true" aria-labelledby="panel-title">
+            <header class="panel-head">
+                <div class="brand">
+                    <div class="brand-mark" data-icon="pin"></div>
+                    <div>
+                        <h1 id="panel-title" data-i18n="title">3D Waypoint</h1>
+                        <p data-i18n="subtitle">Display &amp; behaviour</p>
+                    </div>
+                </div>
+                <button class="icon-btn" data-close aria-label="Close" data-icon="close"></button>
+            </header>
+
+            <div class="preview">
+                <span class="preview-tag" data-i18n="preview">Preview</span>
+                <div class="preview-slot" id="preview-slot"></div>
+            </div>
+
+            <div class="panel-body" id="panel-body"></div>
+
+            <footer class="panel-foot">
+                <span class="hint"><kbd>ESC</kbd> <span data-i18n="close">to close</span></span>
+                <div class="actions">
+                    <button class="btn ghost" data-reset data-i18n="reset">Reset</button>
+                    <button class="btn solid" data-close data-i18n="done">Done</button>
+                </div>
+            </footer>
+        </section>
+    </div>
+
+    <template id="tpl-wp">
+        <div class="wp">
+            <div class="wp-on">
+                <div class="wp-card glass">
+                    <div class="wp-main">
+                        <div class="wp-icon"></div>
+                        <div class="wp-body">
+                            <div class="wp-label"></div>
+                            <div class="wp-dist"><span class="num"></span><span class="unit"></span></div>
+                        </div>
+                    </div>
+                    <div class="wp-extra">
+                        <div class="wp-extra-inner">
+                            <span class="wp-sub"></span>
+                            <span class="wp-eta"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="wp-stem"></div>
+                <div class="wp-pin"><i></i></div>
+            </div>
+            <div class="wp-off">
+                <div class="wp-off-ring"><span class="wp-caret"></span></div>
+                <div class="wp-off-core glass"><div class="wp-icon"></div></div>
+                <div class="wp-off-dist"></div>
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>
